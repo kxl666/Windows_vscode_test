@@ -13,4 +13,5 @@ else:
 sum=0
 for i in range(101):
     sum+=1
-print(sum)
+else:
+    print(sum)
