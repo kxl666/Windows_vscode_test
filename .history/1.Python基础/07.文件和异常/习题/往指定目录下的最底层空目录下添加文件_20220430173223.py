@@ -7,8 +7,7 @@ for folderName, subfolders, filenames in os.walk(
         if not any([True for _ in os.scandir(folderName + '\\' + subfolder)
                     ]):  # 第二种判断文件夹是否为空
             with open(os.path.join(folderName, subfolder) + '\\temp.txt',
-                      'w',
-                      encoding='utf-8') as f:
+                      'w') as f:
                 f.write('This is ' + subfolder)
                 print(folderName + ': ' + subfolder + '\\temp.txt' +
                       ' is created')
