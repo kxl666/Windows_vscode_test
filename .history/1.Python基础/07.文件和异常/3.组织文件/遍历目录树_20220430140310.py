@@ -8,7 +8,7 @@ for folderName, subfolders, filenames in os.walk(
         with open(os.path.join(folderName, subfolder) + '\\temp.txt',
                   'w') as f:
             f.write('This is ' + subfolder)
-            print(folderName + ': ' + subfolder + '\\temp.txt' + ' is created')
+            print(folderName + ': ' + subfolder + ' is created')
     # for filename in filenames:
     # print('FILE INSIDE ' + folderName + ': ' + filename)
     # print('')
