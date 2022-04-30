@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "c:\Users\kxl666\Desktop\Python\1.Python基础\08.文件和异常\2.异常\取得反向跟踪的字符串.py", line 5, in <module>
+    raise Exception('This is the error message.')
+Exception: This is the error message.
