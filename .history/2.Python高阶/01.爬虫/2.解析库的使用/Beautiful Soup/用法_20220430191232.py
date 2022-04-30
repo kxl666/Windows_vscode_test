@@ -86,9 +86,7 @@ soup = BeautifulSoup(html, 'lxml')
 # print(soup.find_all(attrs={'class': 'sister', 'id': 'link3'}))
 # 先根据标签名,再根据属性获取标签
 # print(soup.find_all('ul', id='list-2'))
-# lists = soup.find_all('a', class_='sister')
-# for list in lists:
-#     print(list.string, list['href']) # list['href']获取属性值
+list = soup.find_all('a', class_)
 # 1.3 根据文本内容获取标签,结果是列表形式,可以使用正则表达式,以下两种方式相同
 # print(soup.find_all(text='test01'))
 # print(soup.find_all(string='test01'))
