@@ -43,5 +43,5 @@
     "titleBar.inactiveForeground": "#15202b99"
   },
   "peacock.color": "#61dafb",
-  "cSpell.words": ["chdir", "openpyxl"]
+  "cSpell.words": ["chdir", "getpid", "getppid", "openpyxl", "qsize"]
 }
