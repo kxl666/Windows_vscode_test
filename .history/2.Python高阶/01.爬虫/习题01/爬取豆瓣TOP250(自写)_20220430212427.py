@@ -50,6 +50,7 @@ def save_Page(find_Dir):
 
 def main(page):
     url = 'https://movie.douban.com/top250?start=' + str(page)
+    print(url)
     html = get_Page(url)
     find_Dir = parse_Page(html)
     save_Page(find_Dir)

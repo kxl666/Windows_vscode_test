@@ -1,10 +1,10 @@
 import os
 import re
-import time
 
 import openpyxl
 import requests
 from requests.exceptions import RequestException
+import concurrent
 
 
 def get_Page(url):
@@ -50,13 +50,13 @@ def save_Page(find_Dir):
 
 def main(page):
     url = 'https://movie.douban.com/top250?start=' + str(page)
+    print(url)
     html = get_Page(url)
     find_Dir = parse_Page(html)
     save_Page(find_Dir)
 
 
 if __name__ == "__main__":
-    start = time.time()
     # 第一种
     # for page in range(1, 11):
     #     page = (page - 1) * 25
@@ -65,5 +65,3 @@ if __name__ == "__main__":
     # 第二种
     # 直接map会返回迭代器
     list(map(main, [(page - 1) * 25 for page in range(1, 11)]))
-    end = time.time()
-    print("爬取成功！用时：", end - start)

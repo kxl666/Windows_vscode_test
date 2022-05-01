@@ -1,10 +1,12 @@
 import os
 import re
-import time
+import threading
 
 import openpyxl
 import requests
 from requests.exceptions import RequestException
+
+responses = []
 
 
 def get_Page(url):
@@ -12,7 +14,7 @@ def get_Page(url):
     try:
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
-            return response.text
+            responses.append(response.text)
     except RequestException:
         print("请求失败！")
         return None
@@ -48,22 +50,24 @@ def save_Page(find_Dir):
         wb.save('豆瓣电影TOP250.xlsx')
 
 
-def main(page):
-    url = 'https://movie.douban.com/top250?start=' + str(page)
-    html = get_Page(url)
-    find_Dir = parse_Page(html)
-    save_Page(find_Dir)
+def main():
+    urls = [
+        'https://movie.douban.com/top250?start=' + str((page - 1) * 25)
+        for page in range(1, 11)
+    ]
+    threads = []
+    for url in urls:
+        threads.appen(threading.Thread(target=get_Page, args=(url, )))
+    for t in threads:
+        t.start()
+
+    for t in threads:
+        t.join()
+
+    for response in responses:
+        find_Dir = parse_Page(response)
+        save_Page(find_Dir)
 
 
 if __name__ == "__main__":
-    start = time.time()
-    # 第一种
-    # for page in range(1, 11):
-    #     page = (page - 1) * 25
-    #     main(page)
-
-    # 第二种
-    # 直接map会返回迭代器
-    list(map(main, [(page - 1) * 25 for page in range(1, 11)]))
-    end = time.time()
-    print("爬取成功！用时：", end - start)
+    main()

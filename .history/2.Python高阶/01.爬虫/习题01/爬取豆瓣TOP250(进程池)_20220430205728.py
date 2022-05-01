@@ -1,6 +1,6 @@
+import concurrent.futures
 import os
 import re
-import time
 
 import openpyxl
 import requests
@@ -48,22 +48,16 @@ def save_Page(find_Dir):
         wb.save('豆瓣电影TOP250.xlsx')
 
 
-def main(page):
-    url = 'https://movie.douban.com/top250?start=' + str(page)
-    html = get_Page(url)
-    find_Dir = parse_Page(html)
-    save_Page(find_Dir)
+def main():
+    urls = [
+        'https://movie.douban.com/top250?start=' + str((page - 1) * 25)
+        for page in range(1, 11)
+    ]
+    print(urls)
+    # html = get_Page(url)
+    # find_Dir = parse_Page(html)
+    # save_Page(find_Dir)
 
 
 if __name__ == "__main__":
-    start = time.time()
-    # 第一种
-    # for page in range(1, 11):
-    #     page = (page - 1) * 25
-    #     main(page)
-
-    # 第二种
-    # 直接map会返回迭代器
-    list(map(main, [(page - 1) * 25 for page in range(1, 11)]))
-    end = time.time()
-    print("爬取成功！用时：", end - start)
+    main()

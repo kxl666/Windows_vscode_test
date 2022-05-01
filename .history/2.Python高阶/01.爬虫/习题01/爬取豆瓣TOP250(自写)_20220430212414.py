@@ -50,6 +50,7 @@ def save_Page(find_Dir):
 
 def main(page):
     url = 'https://movie.douban.com/top250?start=' + str(page)
+    print(url)
     html = get_Page(url)
     find_Dir = parse_Page(html)
     save_Page(find_Dir)
@@ -66,4 +67,4 @@ if __name__ == "__main__":
     # 直接map会返回迭代器
     list(map(main, [(page - 1) * 25 for page in range(1, 11)]))
     end = time.time()
-    print("爬取成功！用时：", end - start)
+    print("用时：", end - start)
