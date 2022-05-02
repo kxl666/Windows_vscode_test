@@ -1,4 +1,4 @@
-# 在三种解析库中 beautifulSoup 解析速度最慢,比正则表达式还慢
+# 在三种解析库中 beauifulSoup 解析速度最慢,比正则表达式还慢
 # import re
 
 from bs4 import BeautifulSoup
