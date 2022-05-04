@@ -1,8 +1,7 @@
 import requests
 
 # r = requests.get('https://www.baidu.com/')  # 发送请求
-# r.encoding = 'utf-8'  # 设置编码
-
+# r.encoding =
 # print(r.status_code)  # 返回状态码
 # print(r.text)  # 返回网页源码
 # print(r.cookies)  # 返回cookies

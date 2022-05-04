@@ -17,8 +17,8 @@ matchObj = re.match(r'(.*) are (.*?) .*', line, re.M | re.I)
 print(matchObj)
 if matchObj:
     print("matchObj.groups() : ", matchObj.groups())  # 返回一个包含所有小组字符串的 元组
-    print("matchObj.group() : ", matchObj.group())  # 返回一个 匹配的字符串
-    print("matchObj.group(1) : ", matchObj.group(1))  # 返回第一个小组字符串
-    print("matchObj.group(2) : ", matchObj.group(2))  # 返回第二个小组字符串
+    print("matchObj.group() : ", matchObj.group()) # 返回一个 匹配的字符串
+    print("matchObj.group(1) : ", matchObj.group(1))
+    print("matchObj.group(2) : ", matchObj.group(2))
 else:
     print("No match!!")

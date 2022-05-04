@@ -8,6 +8,5 @@ for i in range(1, 10):
 # 打印乘法口诀表
 for i in range(1, 10):
     for j in range(1, i + 1):
-        print(f'{i}*{j}={i * j}',
-              end='\t')  # 用法 注意这里的f'{i}*{j}={i*j}',是format的用法的简写
+        print(f'{i}*{j}={i * j}', end='\t')  # 用法 注意这里的f'{i}*{j}={i*j}'
     print()
