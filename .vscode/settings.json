@@ -48,6 +48,7 @@
     "getpid",
     "getppid",
     "imapclient",
+    "lxml",
     "openpyxl",
     "pyzmail",
     "qsize"
