@@ -50,6 +50,7 @@
     "imapclient",
     "lxml",
     "openpyxl",
+    "pytesseract",
     "pyzmail",
     "qsize"
   ]
