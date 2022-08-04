@@ -8,7 +8,7 @@ async def say_after(delay, what):  # 协程函数
 
 
 async def main():
-    task1 = asyncio.create_task(say_after(1, 'hello'))  # 创建task对象
+    task1 = asyncio.create_task(say_after(1, 'hello'))
     task2 = asyncio.create_task(say_after(2, 'world'))
 
     print(f"started at {time.strftime('%X')}")

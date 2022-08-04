@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageGrab
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 # from PIL.Image import
 
@@ -104,5 +104,3 @@ draw.text((50, 50), 'Hello', font=font, fill=(255, 0, 0))
 # im.show()
 
 # 截图
-scr = ImageGrab.grab()
-scr.save('./File/scr.png')

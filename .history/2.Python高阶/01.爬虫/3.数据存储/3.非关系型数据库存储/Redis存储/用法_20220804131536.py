@@ -26,7 +26,7 @@ import redis
 # 2.2.连接池连接
 pool = redis.ConnectionPool(host='45.43.61.98',
                             port=6379,
-                            password='Hbxs_tpp_123!_',
+                            password='Hbxs_tpp_123!_#',
                             db=0,
                             max_connections=10)
 con = redis.Redis(connection_pool=pool)

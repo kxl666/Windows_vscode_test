@@ -105,4 +105,4 @@ draw.text((50, 50), 'Hello', font=font, fill=(255, 0, 0))
 
 # 截图
 scr = ImageGrab.grab()
-scr.save('./File/scr.png')
+scr.save("scr.png")

@@ -48,6 +48,7 @@
     "getpid",
     "getpixel",
     "getppid",
+    "httpx",
     "imapclient",
     "lxml",
     "openpyxl",
