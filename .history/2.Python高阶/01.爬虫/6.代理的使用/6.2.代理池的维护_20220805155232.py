@@ -10,3 +10,5 @@
 # proxies = {'http': f'http://{proxy}', 'https': f'https://{proxy}'}
 # response = requests.get(url, proxies=proxies)
 # print(response.text)
+
+# 2.使用ProxyPool

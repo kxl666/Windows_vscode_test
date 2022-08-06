@@ -103,16 +103,14 @@ import requests
 
 # 12.requests,session的使用
 session = requests.Session()
-# 会话
+
 data = {
     'loginName': '18827692771',  # 改为自己的用户名
     'password': '197618nm'  # 改为自己的登录密码
 }
-
-# 登录
 url = "https://passport.17k.com/ck/user/login"
 restult = session.post(url, data=data)
-# 再次请求  拿取书架上的数据
+
 url2 = "https://user.17k.com/ck/author/shelf?page=1&appKey=2406394919"
 result_data = session.get(url2)
 print(result_data.json()['data'])
